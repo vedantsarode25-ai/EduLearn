@@ -1,0 +1,244 @@
+/* ==========================
+    GLOBAL FONTS & BODY
+========================== */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F7FB; /* Light blue-gray background */
+    color: #1F1F1F;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .fw-bold {
+    font-family: 'Poppins', sans-serif;
+    color: #0B1A39; /* Very dark navy */
+}
+
+/* ==========================
+         NAVBAR
+========================== */
+.navbar {
+    background-color: #0B1A39 !important; /* Very dark navy */
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF !important;
+}
+
+.nav-link {
+    color: #E6ECFF !important; /* Very light blue */
+    font-weight: 500;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #FFFFFF !important;
+    font-weight: 600;
+}
+
+.navbar .btn-outline-light {
+    border-color: #E6ECFF;
+    color: #E6ECFF;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: #FFFFFF;
+    color: #0B1A39;
+}
+
+
+/* ==========================
+     HERO SECTION (Index)
+========================== */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(120deg, #0B1A39, #29427A); /* Dark to medium navy */
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #DDE7FF;
+}
+
+.hero .hero-btn {
+    background-color: #FFFFFF !important;
+    color: #0B1A39 !important;
+    border: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 14px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.hero .hero-btn:hover {
+    background-color: #E6ECFF !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #29427A;
+}
+
+/* ==========================
+     PAGE HEADER (Sub-pages)
+========================== */
+.page-header {
+    background-color: #E6ECFF; /* Light blue */
+    padding: 4rem 0;
+}
+
+.page-header h1 {
+    color: #0B1A39;
+}
+
+.page-header p {
+    color: #1F3564;
+    font-size: 1.25rem;
+}
+
+
+/* ==========================
+       MODERN BUTTONS
+========================== */
+.btn-primary {
+    background-color: #29427A; /* Medium navy */
+    border-color: #29427A;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1F3564; /* Darker navy */
+    border-color: #1F3564;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-outline-primary {
+    border-color: #29427A;
+    color: #29427A;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 10px 22px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #29427A;
+    color: #FFFFFF;
+}
+
+.btn-lg {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+}
+
+/* ==========================
+         CARDS
+========================== */
+.card {
+    border-radius: 12px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 4px 16px rgba(41, 66, 122, 0.08); /* Subtle blue shadow */
+    padding: 22px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(41, 66, 122, 0.15);
+}
+
+.card h5 {
+    color: #0B1A39;
+    font-weight: 600;
+}
+
+/* ==========================
+       AUTH (LOGIN/SIGNUP)
+========================== */
+.auth-body {
+    background-color: #F5F7FB;
+}
+
+.auth-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(41, 66, 122, 0.15);
+}
+
+.auth-card .navbar-brand {
+    color: #29427A !important;
+}
+
+.auth-card .form-control {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.auth-card .form-control:focus {
+    border-color: #29427A;
+    box-shadow: 0 0 0 3px rgba(41, 66, 122, 0.1);
+}
+
+.auth-card .btn-primary {
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+/* ==========================
+         FORMS
+========================== */
+form label {
+    font-weight: 600;
+    color: #0B1A39;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #B8C7F0; /* Lighter navy border */
+}
+
+.form-control:focus {
+    border-color: #29427A;
+    box-shadow: 0 0 5px rgba(41, 66, 122, 0.2);
+}
+
+/* ==========================
+         FOOTER
+========================== */
+.footer {
+    background-color: #0B1A39; /* Very dark navy */
+    color: white;
+    padding: 25px 0;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #E6ECFF;
+}

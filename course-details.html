@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title will be set by JavaScript -->
+    <title>Course Details - EduLearn</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">EduLearn</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sdg4.html">SDG 4</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="login.html" class="btn btn-outline-light">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (Dynamic Content) -->
+    <header class="page-header py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold" id="course-header-title">Loading...</h1>
+            <p class="lead" id="course-header-subtitle">Loading course details.</p>
+        </div>
+    </header>
+
+    <!-- Main Content (Dynamic Content) -->
+    <div class="container my-5">
+        <div class="row g-5">
+            <!-- Left Column (Course Info) -->
+            <div class="col-lg-8" id="course-main-content">
+                <h2 class="fw-bold mb-4">About This Course</h2>
+                <p id="course-about-p1">Loading description...</p>
+                <p id="course-about-p2"></p>
+
+                <div class="card my-4 p-4">
+                    <h3 class="fw-bold mb-3">What you'll learn:</h3>
+                    <ul class="list-unstyled" id="course-learn-list">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Loading learning outcomes...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column (Instructor & Enroll) -->
+            <div class="col-lg-4" id="course-sidebar">
+                <div class="card p-4 sticky-top" style="top: 20px;">
+                    <h3 class="fw-bold mb-3">Instructor</h3>
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://placehold.co/80x80/29427A/FFFFFF?text=..." class="rounded-circle me-3" alt="Instructor" id="instructor-img">
+                        <div>
+                            <h5 class="mb-0" id="instructor-name">Loading...</h5>
+                            <p class="text-muted mb-0" id="instructor-title">Loading...</p>
+                        </div>
+                    </div>
+                    <p id="instructor-bio">Loading instructor bio...</p>
+                    <a href="#" class="btn btn-primary btn-lg w-100 mt-3">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 EduLearn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dynamic Content Loader Script -->
+    <script>
+        // This is our new "database" for all course information
+        const courseData = {
+            'mathematics': {
+                title: "Mathematics",
+                subtitle: "Master algebra, calculus, geometry, and more with our expert instructors.",
+                about1: "This comprehensive course covers all essential areas of high school and early college mathematics. Whether you are preparing for exams or simply want to sharpen your skills, our modules are designed to build a strong, confident foundation.",
+                about2: "We'll take you step-by-step through complex theories, with plenty of practical examples and problems to solve along the way.",
+                learnItems: [
+                    "Strong fundamentals in Algebra and Pre-Calculus.",
+                    "Key techniques for Differential and Integral Calculus.",
+                    "Principles of Geometry and Trigonometry.",
+                    "Advanced problem-solving strategies.",
+                    "Real-world applications of mathematical concepts."
+                ],
+                instructorImg: "https://placehold.co/80x80/29427A/FFFFFF?text=JD",
+                instructorName: "John Doe",
+                instructorTitle: "Senior Math Instructor",
+                instructorBio: "John has over 10 years of experience teaching mathematics at both high school and university levels. He holds a Ph.D. in Applied Mathematics."
+            },
+            'physics': {
+                title: "Physics",
+                subtitle: "Explore the laws of the universe, from classical mechanics to quantum physics.",
+                about1: "This course provides a comprehensive introduction to the fundamental principles of physics. We will explore classical mechanics, electricity and magnetism, thermodynamics, and modern physics, using real-world examples to illustrate complex concepts.",
+                about2: "Our goal is to build your problem-solving skills and give you a strong intuition for how the physical world works.",
+                learnItems: [
+                    "Principles of Newtonian mechanics and motion.",
+                    "Fundamentals of electricity and magnetism.",
+                    "Concepts of thermodynamics and energy transfer.",
+                    "Introduction to quantum mechanics and relativity.",
+                    "Laboratory techniques and data analysis."
+                ],
+                instructorImg: "https://placehold.co/80x80/29427A/FFFFFF?text=AE",
+                instructorName: "Dr. Alex Evans",
+                instructorTitle: "Professor of Physics",
+                instructorBio: "Dr. Evans is an award-winning physicist with 15 years of research and teaching experience, specializing in astrophysics and quantum mechanics."
+            },
+            'chemistry': {
+                title: "Chemistry",
+                subtitle: "Master reactions, formulas, and the building blocks of matter.",
+                about1: "Dive into the fascinating world of chemistry. This course covers everything from the periodic table and atomic structure to chemical bonding, stoichiometry, and organic chemistry. You'll gain hands-on experience through virtual labs and interactive simulations.",
+                about2: "Our modules are designed to make complex topics easy to understand, preparing you for advanced study or careers in science and medicine.",
+                learnItems: [
+                    "Atomic theory and the periodic table.",
+                    "Types of chemical bonds and molecular geometry.",
+                    "How to balance chemical equations and use stoichiometry.",
+                    "Fundamentals of organic chemistry and functional groups.",
+                    "Principles of thermodynamics and kinetics."
+                ],
+                instructorImg: "https://placehold.co/80x80/29427A/FFFFFF?text=SC",
+                instructorName: "Dr. Sarah Chen",
+                instructorTitle: "Organic Chemist",
+                instructorBio: "Dr. Chen holds a Ph.D. in Organic Chemistry and has published numerous papers. She is dedicated to making chemistry accessible and engaging for all students."
+            },
+            'biology': {
+                title: "Biology",
+                subtitle: "Explore the science of life, from single cells to complex ecosystems.",
+                about1: "This biology course takes you on a journey through the intricate world of living organisms. You will learn about cell structure, genetics, evolution, human anatomy, and ecology. The course emphasizes the interconnectedness of life and our role within the biosphere.",
+                about2: "With engaging lectures and virtual dissections, you'll gain a deep appreciation for the complexity of life.",
+                learnItems: [
+                    "Cell biology and molecular genetics (DNA, RNA).",
+                    "Principles of Mendelian genetics and evolution.",
+                    "Human anatomy and physiology systems.",
+                    "Fundamentals of ecology and environmental science.",
+                    "The diversity of life and classification."
+                ],
+                instructorImg: "https://placehold.co/80x80/29427A/FFFFFF?text=MR",
+                instructorName: "Dr. Mike Reed",
+                instructorTitle: "Marine Biologist",
+                instructorBio: "Dr. Reed is a field biologist with over 20 years of experience. He brings his passion for conservation and biodiversity into every lesson."
+            },
+            'cs': {
+                title: "Computer Science",
+                subtitle: "Learn programming, algorithms, and data structures from scratch.",
+                about1: "This foundational course in computer science is perfect for beginners. You'll start with the basics of programming in Python and move on to complex topics like data structures, algorithms, and software development principles.",
+                about2: "By the end of this course, you'll be able to write efficient code, solve complex problems, and have a strong portfolio of projects.",
+                learnItems: [
+                    "Python programming fundamentals.",
+                    "Object-Oriented Programming (OOP) concepts.",
+                    "Common data structures (Arrays, Linked Lists, Trees).",
+                    "Algorithm design and analysis (Big O notation).",
+                    "Version control with Git and GitHub."
+                ],
+                instructorImg: "https://placehold.co/80x80/29427A/FFFFFF?text=JS",
+                instructorName: "John Smith",
+                instructorTitle: "Senior Software Engineer",
+                instructorBio: "John is the Head of Engineering at a leading tech company. He has over 12 years of experience in software development and mentoring junior engineers."
+            },
+            'english': {
+                title: "English",
+                subtitle: "Master grammar, vocabulary, and confident communication skills.",
+                about1: "This course is designed to enhance your mastery of the English language, focusing on practical communication for academic and professional success. We cover advanced grammar, sophisticated vocabulary, and effective writing techniques.",
+                about2: "You will learn to analyze literature, construct persuasive arguments, and communicate your ideas with clarity and confidence.",
+                learnItems: [
+                    "Advanced grammar and sentence structuring.",
+                    "Academic and business writing techniques.",
+                    "Critical reading and literary analysis.",
+                    "Effective public speaking and presentation skills.",
+                    "Building a professional vocabulary."
+                ],
+                instructorImg: "https://placehold.co/80x80/29427A/FFFFFF?text=JD",
+                instructorName: "Jane Doe",
+                instructorTitle: "Professor of Literature",
+                instructorBio: "Jane is our founder and a professor of English Literature. She is passionate about the power of language to connect and inspire people."
+            }
+        };
+
+        // This function runs when the page finishes loading
+        window.onload = function() {
+            try {
+                // Get the URL parameter (e.g., "?course=physics")
+                const urlParams = new URLSearchParams(window.location.search);
+                const courseId = urlParams.get('course');
+
+                // Find the data for that course
+                const data = courseData[courseId];
+
+                // If data exists, fill the page
+                if (data) {
+                    // 1. Update Page Title
+                    document.title = data.title + " - EduLearn";
+
+                    // 2. Update Header
+                    document.getElementById('course-header-title').textContent = data.title;
+                    document.getElementById('course-header-subtitle').textContent = data.subtitle;
+
+                    // 3. Update About Section
+                    document.getElementById('course-about-p1').textContent = data.about1;
+                    document.getElementById('course-about-p2').textContent = data.about2;
+
+                    // 4. Update "What you'll learn" list
+                    const learnList = document.getElementById('course-learn-list');
+                    learnList.innerHTML = ''; // Clear the "loading" text
+                    data.learnItems.forEach(item => {
+                        learnList.innerHTML += `<li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> ${item}</li>`;
+                    });
+
+                    // 5. Update Instructor Card
+                    document.getElementById('instructor-img').src = data.instructorImg;
+                    document.getElementById('instructor-img').alt = "Instructor " + data.instructorName;
+                    document.getElementById('instructor-name').textContent = data.instructorName;
+                    document.getElementById('instructor-title').textContent = data.instructorTitle;
+                    document.getElementById('instructor-bio').textContent = data.instructorBio;
+
+                } else {
+                    // If no data found (e.g., bad link), show an error
+                    showError();
+                }
+            } catch (error) {
+                console.error("Error loading course data:", error);
+                showError();
+            }
+        };
+
+        function showError() {
+            // Replace page content with an error message and redirect
+            document.body.innerHTML = `
+                <div class="container my-5 text-center">
+                    <h1 class="display-4 fw-bold">Course Not Found</h1>
+                    <p class="lead">We couldn't find the course you were looking for.</p>
+                    <p>Redirecting you back to the main courses page...</p>
+                    <a href="courses.html" class="btn btn-primary btn-lg">Go to Courses</a>
+                </div>`;
+            
+            // Redirect back to courses page after 3 seconds
+            setTimeout(() => {
+                window.location.href = 'courses.html';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
