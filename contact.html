@@ -53,22 +53,28 @@
             <div class="col-lg-8">
                 <div class="card p-4 p-md-5">
                     <h2 class="text-center fw-bold mb-4">Send Us a Message</h2>
-                    <form>
+
+                    <!-- ✅ Added id and novalidate for JS validation -->
+                    <form id="contact-form" novalidate>
                         <div class="mb-3">
                             <label for="name" class="form-label">Full Name</label>
                             <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            <div id="name-error" class="text-danger small mt-1"></div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                            <div id="email-error" class="text-danger small mt-1"></div>
                         </div>
                         <div class="mb-3">
                             <label for="subject" class="form-label">Subject</label>
                             <input type="text" class="form-control" id="subject" placeholder="What is this about?" required>
+                            <div id="subject-error" class="text-danger small mt-1"></div>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" rows="5" placeholder="Your message here" required></textarea>
+                            <div id="message-error" class="text-danger small mt-1"></div>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
@@ -79,10 +85,12 @@
                 <div class="text-center mt-5">
                     <h3 class="fw-bold">Or Contact Us Directly</h3>
                     <p class="lead mt-3">
-                        <i class="bi bi-envelope-fill"></i> Email: <a href="mailto:support@edulearn.com" class="text-decoration-none">support@edulearn.com</a>
+                        <i class="bi bi-envelope-fill"></i> Email: 
+                        <a href="mailto:support@edulearn.com" class="text-decoration-none">support@edulearn.com</a>
                     </p>
                     <p class="lead">
-                        <i class="bi bi-telephone-fill"></i> Phone: <a href="tel:+1234567890" class="text-decoration-none">+123 456 7890</a>
+                        <i class="bi bi-telephone-fill"></i> Phone: 
+                        <a href="tel:+1234567890" class="text-decoration-none">+123 456 7890</a>
                     </p>
                 </div>
             </div>
@@ -97,5 +105,73 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ✅ Custom JS validation for Contact form -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const subjectInput = document.getElementById('subject');
+            const messageInput = document.getElementById('message');
+
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const subjectError = document.getElementById('subject-error');
+            const messageError = document.getElementById('message-error');
+
+            function clearErrors() {
+                nameError.textContent = '';
+                emailError.textContent = '';
+                subjectError.textContent = '';
+                messageError.textContent = '';
+            }
+
+            function isValidEmail(email) {
+                // simple email pattern
+                const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return pattern.test(email);
+            }
+
+            contactForm.addEventListener('submit', function (e) {
+                clearErrors();
+                let isValid = true;
+
+                // Name: at least 3 characters
+                if (nameInput.value.trim().length < 3) {
+                    nameError.textContent = 'Please enter your full name (at least 3 characters).';
+                    isValid = false;
+                }
+
+                // Email: basic format check
+                if (!isValidEmail(emailInput.value.trim())) {
+                    emailError.textContent = 'Please enter a valid email address.';
+                    isValid = false;
+                }
+
+                // Subject: at least 3 characters
+                if (subjectInput.value.trim().length < 3) {
+                    subjectError.textContent = 'Please enter a subject.';
+                    isValid = false;
+                }
+
+                // Message: at least 10 characters
+                if (messageInput.value.trim().length < 10) {
+                    messageError.textContent = 'Please enter a longer message (at least 10 characters).';
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    // Stop the form from submitting if any field is invalid
+                    e.preventDefault();
+                    return;
+                }
+
+                // Optional: show a simple message (demo purpose)
+                alert('Thank you! Your message has been submitted. (Demo)');
+            });
+        });
+    </script>
 </body>
 </html>
